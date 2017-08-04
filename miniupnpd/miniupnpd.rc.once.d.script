@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# generate a UUID on first system start
+#
+
+UUID=`uuidgen`
+
+mv /etc/miniupnpd/miniupnpd.conf /etc/miniupnpd/miniupnpd.conf.before
+sed -e "s/^uuid=[-0-9a-fA-F]*/uuid=$UUID/" /etc/miniupnpd/miniupnpd.conf.before > /etc/miniupnpd/miniupnpd.conf
+rm /etc/miniupnpd/miniupnpd.conf.before
+
+
