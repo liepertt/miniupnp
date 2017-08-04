@@ -29,10 +29,10 @@ CFLAGS += -Wall
 CFLAGS += -Wextra -Wstrict-prototypes -Wdeclaration-after-statement
 #CFLAGS += -Wno-missing-field-initializers
 #CFLAGS += -ansi	# iptables headers does use typeof which is a gcc extension
-CC ?= gcc
+CC ?= $(CROSS_COMPILE)gcc
 RM = rm -f
 INSTALL = install
-STRIP ?= strip
+STRIP ?= $(CROSS_COMPILE)strip
 CP = cp
 
 
