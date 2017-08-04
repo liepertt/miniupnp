@@ -24,11 +24,11 @@ CFLAGS += -Wstrict-prototypes
 #CFLAGS += -Wdeclaration-after-statement
 #CFLAGS += -Wno-missing-field-initializers
 CFLAGS += -fno-common
-CC ?= gcc
+CC ?= $(CROSS_COMPILE)gcc
 RM = rm -f
 MV = mv
 INSTALL = install
-STRIP = strip
+STRIP = $(CROSS_COMPILE)strip
 
 # OSNAME and FWNAME are used for building OS or FW dependent code.
 OSNAME != uname -s
